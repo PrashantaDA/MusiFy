@@ -1,0 +1,95 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+body {
+  font-family: "Raleway", sans-serif;
+  background: linear-gradient(#999, #888, #ccc, #888, #999);
+}
+
+img {
+  max-width: 100%;
+}
+
+ul {
+  list-style: none;
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+  height: 6.5vh;
+  background-color: #222;
+}
+
+nav ul li {
+  padding: 0 12px;
+  color: #f0f8ff;
+}
+
+nav ul li:hover {
+  color: #38b6ff;
+  transform: scale(1.1);
+}
+
+.container {
+  min-height: 75vh;
+  background-image: url("../img/MusiBg.jpg");
+  color: #f0f8ff;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
+  display: flex;
+  width: 80%;
+  margin: 1rem auto;
+  padding: 1.54rem;
+  border-radius: 0.675rem;
+}
+
+.brand img {
+  width: 60px;
+  padding: auto 0.5rem;
+}
+
+.brand img:hover {
+  transform: scale(1.1);
+}
+
+.bottom {
+  position: sticky;
+  bottom: 0;
+  height: 6.211rem;
+  background-color: #222;
+  color: #f0f8ff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#progressBar {
+  width: 80vw;
+}
+
+.icons {
+  margin-top: 1rem;
+}
+
+.icons i {
+  cursor: pointer;
+  padding: 0 0.54rem;
+}
+
+.icons i:hover {
+  transform: scale(1.2);
+  color: #3099d5;
+}
