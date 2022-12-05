@@ -157,9 +157,10 @@ nav ul li:hover {
   .songitem img {
     margin-right: 0;
     margin-bottom: 0.5rem;
+    width: 2.2rem;
   }
 
   .songitem h3 {
-    font-size: 16px;
+    font-size: 1.1rem;
   }
 }
