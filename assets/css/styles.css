@@ -110,6 +110,7 @@ nav ul li:hover {
 #progressBar {
   width: 80vw;
   cursor: pointer;
+  margin-top: 0.3rem;
 }
 
 .icons {
@@ -132,7 +133,7 @@ nav ul li:hover {
 }
 
 .gif {
-  margin-top: 1rem;
+  margin-top: 0.6rem;
 }
 
 /* Media Query */
