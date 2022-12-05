@@ -137,6 +137,21 @@ nav ul li:hover {
   margin-top: 0.6rem;
 }
 
+.songitemplay {
+  cursor: pointer;
+}
+
+.uparrow {
+  position: absolute;
+  right: 1.5rem;
+  bottom: 1rem;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background-color: #111;
+  color: #fff;
+}
+
 /* Media Query */
 
 @media (max-width: 550px) {
