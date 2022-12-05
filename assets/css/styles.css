@@ -64,7 +64,7 @@ nav ul li:hover {
 .songitem {
   height: 2rem;
   display: flex;
-  opacity: 54%;
+  opacity: 60%;
   align-items: center;
   justify-content: space-between;
   background-color: #f0f8ff;
@@ -98,8 +98,8 @@ nav ul li:hover {
 .bottom {
   position: sticky;
   bottom: 0;
-  height: 6.211rem;
-  background-color: #222;
+  height: 10rem;
+  background-color: #111;
   color: #f0f8ff;
   display: flex;
   flex-direction: column;
@@ -109,6 +109,7 @@ nav ul li:hover {
 
 #progressBar {
   width: 80vw;
+  cursor: pointer;
 }
 
 .icons {
@@ -123,4 +124,31 @@ nav ul li:hover {
 .icons i:hover {
   transform: scale(1.2);
   color: #3099d5;
+}
+
+.songinfo img {
+  opacity: 0;
+  transition: opacity 1s ease-in;
+}
+
+/* Media Query */
+
+@media (max-width: 550px) {
+  .songitem {
+    opacity: 70%;
+    height: auto;
+    flex-direction: column;
+    text-align: center;
+    width: 80%;
+    margin: auto;
+    padding: 10px 0;
+  }
+  .songitem img {
+    margin-right: 0;
+    margin-bottom: 0.5rem;
+  }
+
+  .songitem h3 {
+    font-size: 16px;
+  }
 }
