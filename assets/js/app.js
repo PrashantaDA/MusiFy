@@ -164,12 +164,13 @@ const makePlays = () => {
 Array.from(document.querySelectorAll(".songitemplay")).forEach((element) => {
   element.addEventListener("click", (e) => {
     makePlays();
-    pausePlay(e.target);
 
     audioElement.src = `${songs[e.target.id].filePath}`;
     currentlyPlayingTitle.innerHTML = `${songs[e.target.id].songName}`;
     audioElement.currentTime = 0;
-    audioElement.play();
+    // audioElement.play();
+    pausePlay(e.target);
+
     pausePlay(masterPlay);
 
     previous.addEventListener("click", () => {
