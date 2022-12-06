@@ -85,7 +85,7 @@ let songs = [
   },
 ];
 
-let audioElement = new Audio("assets/music/Cant Take My Eyes off You.mp3");
+let audioElement = new Audio("");
 
 // Add songs
 const songList = document.querySelector(".songitemcontainer");
@@ -156,7 +156,10 @@ const makePlays = () => {
   });
 };
 
+audioElement.src = `${songs[0].filePath}`;
 masterPlay.addEventListener("click", () => {
+  currentlyPlayingTitle.innerHTML = `${songs[0].songName}`;
+  audioElement.currentTime = 0;
   pausePlay(masterPlay);
 });
 
