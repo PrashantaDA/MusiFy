@@ -134,11 +134,6 @@ const pausePlay = (player) => {
   }
 };
 
-masterPlay.addEventListener("click", () => {
-  //   currentlyPlayingTitle.innerHTML = `Can't Take My Eyes off You`;
-  pausePlay(masterPlay);
-});
-
 audioElement.addEventListener("timeupdate", () => {
   //? Update SeekBar
   let progress = parseInt(
@@ -152,7 +147,7 @@ progressBar.addEventListener("change", () => {
 });
 
 audioElement.addEventListener("ended", () => {
-  audioElement.loop(true);
+  pausePlay(masterPlay);
 });
 
 const makePlays = () => {
@@ -161,6 +156,10 @@ const makePlays = () => {
   });
 };
 
+masterPlay.addEventListener("click", () => {
+  pausePlay(masterPlay);
+});
+
 Array.from(document.querySelectorAll(".songitemplay")).forEach((element) => {
   element.addEventListener("click", (e) => {
     makePlays();
@@ -168,10 +167,15 @@ Array.from(document.querySelectorAll(".songitemplay")).forEach((element) => {
     audioElement.src = `${songs[e.target.id].filePath}`;
     currentlyPlayingTitle.innerHTML = `${songs[e.target.id].songName}`;
     audioElement.currentTime = 0;
-    // audioElement.play();
-    pausePlay(e.target);
 
+    pausePlay(e.target);
     pausePlay(masterPlay);
+
+    /*                                                                                                                  */
+
+    //* Previous and Next Buttons
+
+    //? Previous
 
     previous.addEventListener("click", () => {
       if (e.target.id <= 1) {
@@ -179,29 +183,32 @@ Array.from(document.querySelectorAll(".songitemplay")).forEach((element) => {
       } else {
         e.target.id -= 1;
       }
+      makePlays();
 
       audioElement.src = `${songs[e.target.id].filePath}`;
       currentlyPlayingTitle.innerHTML = `${songs[e.target.id].songName}`;
 
       audioElement.currentTime = 0;
-      audioElement.play();
-      playFn(masterPlay);
+      pausePlay(masterPlay);
+      pausePlay(e.target);
     });
 
-    //     next.addEventListener("click", () => {
-    //       let targetId = e.target.id;
-    //       if (targetId > 10) {
-    //         targetId = 0;
-    //       } else {
-    //         targetId += 1;
-    //       }
+    //? Next
 
-    //        audioElement.src = `${songs[e.target.id].filePath}`;
-    //        currentlyPlayingTitle.innerHTML = `${songs[e.target.id].songName}`;
-    //        audioElement.currentTime = 0;
-    //        audioElement.play();
-    //        playFn(masterPlay);
-    //     });
+    next.addEventListener("click", () => {
+      if (e.target.id >= 0 && e.target.id < 9) {
+        e.target.id++;
+      } else {
+        e.target.id = 0;
+      }
+
+      audioElement.src = `${songs[e.target.id].filePath}`;
+      currentlyPlayingTitle.innerHTML = `${songs[e.target.id].songName}`;
+
+      audioElement.currentTime = 0;
+
+      pausePlay(masterPlay);
+    });
   });
 });
 
