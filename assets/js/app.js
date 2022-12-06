@@ -147,7 +147,7 @@ progressBar.addEventListener("change", () => {
 });
 
 audioElement.addEventListener("ended", () => {
-  pausePlay(masterPlay);
+  audioElement.loop(true);
 });
 
 const makePlays = () => {
@@ -183,30 +183,29 @@ Array.from(document.querySelectorAll(".songitemplay")).forEach((element) => {
       } else {
         e.target.id -= 1;
       }
-      makePlays();
 
       audioElement.src = `${songs[e.target.id].filePath}`;
       currentlyPlayingTitle.innerHTML = `${songs[e.target.id].songName}`;
 
       audioElement.currentTime = 0;
+
       pausePlay(masterPlay);
-      pausePlay(e.target);
     });
 
     //? Next
 
     next.addEventListener("click", () => {
-      if (e.target.id >= 0 && e.target.id < 9) {
-        e.target.id++;
-      } else {
+      if (e.target.id >= 9) {
         e.target.id = 0;
+      } else {
+        e.target.id += 1;
       }
+
+      console.log(e.target.id);
 
       audioElement.src = `${songs[e.target.id].filePath}`;
       currentlyPlayingTitle.innerHTML = `${songs[e.target.id].songName}`;
-
       audioElement.currentTime = 0;
-
       pausePlay(masterPlay);
     });
   });
