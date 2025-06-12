@@ -1,75 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			http-equiv="X-UA-Compatible"
+			content="IE=edge"
+		/>
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<link
+			rel="shortcut icon"
+			href="assets/img/logoo.png"
+			type="image/x-icon"
+		/>
+		<link
+			rel="stylesheet"
+			href="assets/css/styles.css"
+		/>
+		<title>MusiFy</title>
+	</head>
+	<body>
+		<nav>
+			<div class="nav-container">
+				<a
+					href="index.html"
+					class="brand"
+				>
+					<img
+						src="assets/img/logoo.png"
+						alt="MusiFy Logo"
+					/>
+					<span>MusiFy</span>
+				</a>
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="#">About</a></li>
+					<li>
+						<button
+							id="theme-toggle"
+							aria-label="Toggle theme"
+						>
+							<i class="fas fa-adjust"></i>
+						</button>
+					</li>
+				</ul>
+			</div>
+		</nav>
 
-     <head>
-          <meta charset="UTF-8">
-          <meta http-equiv="X-UA-Compatible" content="IE=edge">
-          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<main class="container">
+			<section class="song-banner">
+				<div class="banner-overlay"></div>
+				<img
+					src="assets/img/cover1.jpg"
+					alt="Now Playing Cover"
+					class="banner-cover"
+				/>
+				<div class="banner-info">
+					<h2 class="banner-title">Select a song to play</h2>
+					<p class="banner-artist">Artist Name</p>
+					<div class="banner-progress">
+						<span class="current-time">0:00</span>
+						<input
+							type="range"
+							name="range"
+							id="progressBar"
+							min="0"
+							max="100"
+							value="0"
+							aria-label="Playback progress"
+						/>
+						<span class="duration">0:00</span>
+					</div>
+				</div>
+			</section>
+			<section class="song-list">
+				<h1>Trending Now</h1>
+				<div class="song-item-container"></div>
+			</section>
+		</main>
 
-          <link rel="shortcut icon" href="assets/img/logoo.png" type="image/x-icon">
-          <link rel="stylesheet" href="assets/css/styles.css">
-          <title>MusiFy</title>
-     </head>
+		<footer class="bottom">
+			<div class="player-controls">
+				<div class="song-info">
+					<img
+						src="assets/img/sound.gif"
+						alt="Playing Animation"
+						class="gif"
+					/>
+					<h4 class="currently-playing-title"></h4>
+				</div>
+				<div class="icons">
+					<button
+						class="control-btn"
+						id="shuffle"
+						aria-label="Shuffle playlist"
+					>
+						<i class="fas fa-random"></i>
+					</button>
+					<button
+						class="control-btn"
+						id="previous"
+						aria-label="Previous song"
+					>
+						<i class="fas fa-backward-step"></i>
+					</button>
+					<button
+						class="control-btn"
+						id="masterPlay"
+						aria-label="Play or pause song"
+					>
+						<i class="far fa-circle-play"></i>
+					</button>
+					<button
+						class="control-btn"
+						id="next"
+						aria-label="Next song"
+					>
+						<i class="fas fa-forward-step"></i>
+					</button>
+					<button
+						class="control-btn"
+						id="repeat"
+						aria-label="Repeat song"
+					>
+						<i class="fas fa-redo"></i>
+					</button>
+				</div>
+				<div class="volume-control">
+					<i class="fas fa-volume-up"></i>
+					<input
+						type="range"
+						name="volume"
+						id="volumeBar"
+						min="0"
+						max="100"
+						value="100"
+						aria-label="Volume control"
+					/>
+				</div>
+				<button
+					class="playlist-toggle"
+					aria-label="Toggle playlist"
+				>
+					<i class="fas fa-list"></i>
+				</button>
+			</div>
+			<button
+				class="uparrow"
+				aria-label="Scroll to top"
+			>
+				<i class="fa-solid fa-arrow-up"></i>
+			</button>
+		</footer>
 
-     <body>
-          <nav>
-               <ul>
-                    <a href="index.html">
-                         <li class="brand">
-                              <img src="assets/img/logoo.png" alt="Logo">
-
-                         </li>
-                    </a>
-                    <a href="index.html">
-                         <li>Home</li>
-                    </a>
-                    <a href="#">
-                         <li>About</li>
-                    </a>
-               </ul>
-          </nav>
-
-          <div class="container">
-               <div class="songlist">
-                    <h1>Trending Now</h1>
-                    <div class="songitemcontainer">
-
-                    </div>
-
-               </div>
-               <div class="songBanner">
-
-               </div>
-          </div>
-
-          <div class="bottom">
-
-               <input type="range" name="range" id="progressBar" min="0" max="100" value="0">
-
-               <div class="songinfo">
-                    <img src="assets/img/sound.gif" width="78px" alt="Sound_Playing" class="gif">
-               </div>
-
-               <h4 class="currentlyplayingtitle"></h4>
-
-               <div class="icons">
-                    <i class="fas fa-backward-step fa-3x" id="previous"></i>
-                    <i class="far fa-circle-play fa-3x" id="masterPlay"></i>
-                    <i class="fas fa-forward-step fa-3x" id="next"></i>
-               </div>
-
-
-
-               <button class="uparrow"><i class="fa-solid fa-arrow-up fa-3x"></i></button>
-
-          </div>
-
-
-
-          <script src="assets/js/app.js"></script>
-
-          <!-- FontAwesome -->
-          <script src="https://kit.fontawesome.com/c3ec04ef0d.js" crossorigin="anonymous"></script>
-     </body>
-
+		<script src="assets/js/app.js"></script>
+		<script
+			src="https://kit.fontawesome.com/c3ec04ef0d.js"
+			crossorigin="anonymous"
+		></script>
+	</body>
 </html>
